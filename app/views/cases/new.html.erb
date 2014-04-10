@@ -1,0 +1,9 @@
+<% content_for :title do %>Grand Rounds: Start your Case<% end %>
+<% content_for :description do %>Grand Rounds: Start your Case<% end %>
+
+<%= simple_form_for @case do |f| %>
+  <%= f.error_notification %>
+  <%= render "#{@case.current_step}_step", :f => f %>
+  <!-- <p><%= f.submit "Continue" %></p>
+  <p><%= f.submit "Back", :name => "back_button" unless @case.first_step? %></p> -->
+<% end %>

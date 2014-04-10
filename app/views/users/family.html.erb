@@ -1,0 +1,108 @@
+<% content_for :title do %>Grand Rounds: Profile<% end %>
+<% content_for :description do %>Grand Rounds<% end %>
+
+<div class="container">
+	<h1><%= @user.firstname + " " + @user.lastname %> <small>/ Profile</small></h1>
+	<ul class="nav nav-pills" id="profileTabs">
+	  <li class="active"><a href="#profile"  data-toggle="pill">Profile</a></li>
+	  <li><a href="#password" data-toggle="pill">Password</a></li>
+	  <li><a href="#coverage" data-toggle="pill">Coverage</a></li>
+	</ul>
+	<hr>
+	</div>
+
+	<div class="container tab-content">
+		<div class="row tab-pane active" id="profile">
+			<%= simple_form_for @user do |f| %>
+			 <%= f.error_notification %>
+			<div class="form-group">
+				<%= f.label :Name %>
+			<div class="row">
+			<div class="col-xs-6">
+				<%= f.input :firstname, label: false, :placeholder => 'First name', :class => "form-control" %>
+			</div>
+			<div class="col-xs-6">
+				<%= f.input :lastname, label: false, :placeholder => 'Last name', :class => "form-control" %>
+			</div>
+			</div>
+			</div><!-- /name -->
+			<div class="form-group has-feedback">
+				<label class="control-label">Email</label>
+				<div class="row">
+					<div class="col-xs-6">
+						<%= f.input :email, label: false, :placeholder => 'Your email address...', :class => "form-control", :input_html => {"data-container" => "body", "data-toggle" => "popover", "data-trigger" => "focus", "data-placement" => "left", "data-title" => "Email", "data-content" => "Make sure you type it correctly, it will be the primary way that Grand Rounds contacts you about your case."} %>
+						<span class="glyphicon glyphicon-ok form-control-feedback"></span>				</div>
+						<div class="col-md-6"><a href="#" class="btn btn-info">+ Add another email address</a></div>
+				</div>
+			</div><!-- /email -->
+			<div class="form-group has-feedback">
+			<%= f.label "Phone Number" %>
+			<div class="row">
+			<div class="col-xs-4">
+			 <%= f.input :tel, label: false, :placeholder => 'Phone number', :class => "form-control", :input_html => {"data-container" => "body", "data-toggle" => "popover", "data-trigger" => "focus", "data-placement" => "left", "data-html" => "true", "data-title" => "Phone", "data-content" => "Your phone number gives us an additional way to contact you about your case as well as helping us to verify your identity. <p><strong>With your mobile number, we can also SMS you updates to your case.</strong></p>"} %><span class="glyphicon glyphicon-ok form-control-feedback"></span>	
+			</div>
+			<div class="col-xs-2">
+				<select class="form-control">
+				  <option>Mobile</option>
+				  <option>Home</option>
+					<option>Other</option>
+				</select>
+			</div>
+			<div class="col-md-6"><a href="#" class="btn btn-info">+ Add another phone number</a></div>
+			</div>
+			</div><!-- /phone -->
+			<div class="form-group">
+				<label>Birthday</label>
+				<div class="row">
+					<div class="col-xs-8">
+						<%= @user.birthday %>
+				</div>
+			</div>
+			</div><!-- /birthday -->
+			<div class="form-group">
+				<label>Member Since</label>
+				<div class="row">
+					<div class="col-xs-8">
+						<%= @user.created_at %> (<%= time_ago_in_words(@user.created_at) %>)
+				</div>
+			</div>
+			</div><!-- /birthday -->
+			<hr>
+			<div class="form-group">
+				<label>Valid Email</label>
+			<div class="row">
+			<div class="col-xs-6">
+				<%= f.input :validemail, label: "Patient email has been validated", :class => "form-control" %>
+			</div>
+			</div>
+			</div><!-- /valid email -->
+			<div class="form-group">
+				<label>Jamba Juice Whitelist</label>
+			<div class="row">
+			<div class="col-xs-6">
+				<%= f.input :jamba, label: "Patient is on the Jamaba Juice whitelist", :placeholder => 'First name', :class => "form-control" %>
+			</div>
+			</div>
+			</div><!-- /jamba whitelist -->
+			<div class="form-group">
+				<label>Cases and Team member</label>
+			<div class="row">
+			<div class="col-xs-6">
+				<%= f.input :cases, label: "Patient has cases and such", :placeholder => 'First name', :class => "form-control" %>
+			</div>
+			</div>
+			</div><!-- /cases whitelist -->
+			
+		      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+		    <% end %>
+		  </div>
+		
+		<div class="row tab-pane" id="password">a</div>
+		<div class="row tab-pane" id="coverage">b</div>
+	</div>
+	
+	<script>
+	  $(function () {
+	    $('#profileTabs a:first').tab('show')
+	  })
+	</script>

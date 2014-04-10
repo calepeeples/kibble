@@ -1,0 +1,265 @@
+	<!-- Progress Bar -->
+	<div class="progress-bar-opinion">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="media">
+						<%= image_tag 'gr-opinion.png', :size => '68', :class => "media-object pull-left" %>
+							<div class="media-body">
+								<small>GRAND ROUNDS</small>
+								<h4>EXPERT OPINION</h4>
+							</div>
+						</div>
+				</div>
+				<div class="col-md-2 text-center">
+					<span class="fa-stack fa-lg">
+					      <i class="fa fa-circle fa-stack-2x"></i>
+					      <i class="fa fa-check fa-inverse fa-stack-1x"></i>
+			    </span>
+					<p>Start your Opinion</p>
+				</div>
+				<div class="col-md-2 text-center step-on">
+					<span class="fa-stack fa-lg">
+					      <i class="fa fa-circle fa-stack-2x"></i>
+					      <i class="fa fa-inverse fa-stack-1x">2</i>
+			    </span>
+					<p>Locate your Records</p>
+				</div>
+				<div class="col-md-2 text-center step-next">
+					<span class="fa-stack fa-lg">
+					      <i class="fa fa-circle fa-stack-2x"></i>
+					      <i class="fa fa-inverse fa-stack-1x">3</i>
+			    </span>
+					<p>Approve your Release</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Progress Bar -->
+	
+	<div class="container signup-container">
+		<div class="row">
+			<div class="col-md-3 hidden-sm hidden-xs sidebar">
+				<!-- <p><strong>Getting</strong> an expert opinion from our panel of elite physicians is simple and easy.</p><p>Getting started should only take a few minutes.</p> -->
+			</div>
+
+			<div class="col-md-9">
+								
+				<!-- payment info -->
+
+				<p><strong>We're</strong> going to start collecting all the medical records that pertain to this condition, but first we need you to provide us with the names of the doctors, physicians, specialists, and locations that have been seen.</p>
+				<hr>
+				<div class="bs-callout bs-callout-danger">
+					<h4>We need your medical records.</h4>
+					Many of our patients have seen multiple specialists before they join Grand Rounds. Please try and include as many doctors and locations as you can remember. Types of records that we may need:
+					<ul>
+						<li>Case &amp; visit notes from your <strong>Treating Physician</strong> or <strong>Primary Care Provider</strong></li>
+						<li><strong>Medical Imaging or X-Rays</strong> from a specialist.</li>
+						<li><strong>Blood Work </strong>from a hospital or clinic</li>
+					</ul>
+				</div>
+				
+				<p><a  class="btn btn-info" id="addlocation">Add a Record location</a></p>
+				<div class="well" id="location-details">
+					<div class="form-group">
+						<div class="row">
+						<div class="col-xs-6">
+							<label>What type of records location?</label>
+							<select class="form-control">
+								<option>Specialist Physicians Office</option>
+								<option>Primary Care Doctors Office</option>
+								<option>Hospital or Clinic</option>
+								<option>Medical Lab (MRIs, X-rays, Blood work)</option>
+								</select>
+							</div>
+						</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-8">
+								<div class="form-group" id="record-info">
+							<div class="row">
+								<div class="col-xs-12">
+									<input type="text" class="form-control" placeholder="Physician's name" required autofocus id="physician">
+									<input type="hidden" id="physician-id">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12">
+									<input type="text" class="form-control" placeholder="Physician's specialty" required autofocus id="physician-description">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12">
+									<input type="text" class="form-control" placeholder="Practice, hospital, clinic, etc." required autofocus id="physician-practice"> 
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6">
+									<input type="text" class="form-control" placeholder="City" required autofocus id="physician-city"> 
+								</div>
+								<div class="col-xs-4">
+									<select class="form-control" id="physician-state">
+									  <option>State
+										<option value="AL">Alabama
+										<option value="AK">Alaska
+										<option value="AZ">Arizona
+										<option value="AR">Arkansas
+										<option value="CA">California
+										<option value="CO">Colorado
+										<option value="CT">Connecticut
+										<option value="DE">Delaware
+										<option value="FL">Florida
+										<option value="GA">Georgia
+										<option value="HI">Hawaii
+										<option value="ID">Idaho
+										<option value="IL">Illinois
+										<option value="IN">Indiana
+										<option value="IA">Iowa
+										<option value="KS">Kansas
+										<option value="KY">Kentucky
+										<option value="LA">Louisiana
+										<option value="ME">Maine
+										<option value="MD">Maryland
+										<option value="MA">Massachusetts
+										<option value="MI">Michigan
+										<option value="MN">Minnesota
+										<option value="MS">Mississippi
+										<option value="MO">Missouri
+										<option value="MT">Montana
+										<option value="NE">Nebraska
+										<option value="NV">Nevada
+										<option value="NH">New Hampshire
+										<option value="NJ">New Jersey
+										<option value="NM">New Mexico
+										<option value="NY">New York
+										<option value="NC">North Carolina
+										<option value="ND">North Dakota
+										<option value="OH">Ohio
+										<option value="OK">Oklahoma
+										<option value="OR">Oregon
+										<option value="PA">Pennsylvania
+										<option value="RI">Rhode Island
+										<option value="SC">South Carolina
+										<option value="SD">South Dakota
+										<option value="TN">Tennessee
+										<option value="TX">Texas
+										<option value="UT">Utah
+										<option value="VT">Vermont
+										<option value="VA">Virginia
+										<option value="WA">Washington
+										<option value="DC">Washington D.C.
+										<option value="WV">West Virginia
+										<option value="WI">Wisconsin
+										<option value="WY">Wyoming
+									</select>
+								</div>
+							</div>
+								</div>	
+								<div class="form-group">
+							<label>Phone Number (Optional)</label>
+							<div class="row">
+								<div class="col-xs-8">
+								 <input type="text" class="form-control" placeholder="Phone number" required required id="physician-phone"> 
+								</div>
+							</div>
+						</div>
+							</div>
+	
+						</div>
+						<p><a class="btn btn-danger" id="cancel">cancel</a> <a class="btn btn-primary" id="save">save</a></p>
+				</div>
+				
+				<!-- /payment info -->
+				<p><%= f.submit "Save & Continue", :class => "btn btn-lg btn-primary btn-block disabled", :id => "records-submit" %></p>
+				<div class="row">
+					<div class="col-xs-6">
+						<%= f.submit "Back: Describe your Condition", :class => "btn btn-link btn-sm", :name => "back_button" unless @case.first_step? %>
+					</div>
+					<div class="col-xs-6 text-right">
+<small><strong>Next Step:</strong> Approve your Medical Release</small>
+					</div>
+				</div>
+					<!-- create account -->		
+				
+
+				<!-- /carousel -->
+			</div>
+
+		</div>
+	</div>
+	<script>
+	//$('#location-details').hide(); 
+			$( "#addlocation" ).click(function() {
+			  $( "#location-details" ).show(250);
+			});
+			
+			$( "#cancel, #save").click(function() {
+			  $( "#location-details" ).hide(250);
+				$( "#records-submit" ).removeClass("disabled");
+			});
+	</script>
+	<script>
+	  $(function() {
+	    var physicians = [
+	      {
+	        value: "John Smith",
+	        label: "John Smith",
+	        desc: "General Practice",
+					locPractice: "PAMF",
+					locCity: "Palo Alo",
+					locState: "CA",
+					locPhone: "(650) 555-1234"
+	        //icon: "jquery_32x32.png"
+	      },
+	      {
+	        value: "Jim Smith",
+	        label: "Jim Smith",
+	        desc: "Orthopedics",
+					locPractice: "PAMF",
+					locCity: "Palo Alo",
+					locState: "CA",
+					locPhone: "(650) 555-1234"
+	        //icon: "jqueryui_32x32.png"
+	      },
+	      {
+	        value: "Mary Wong",
+	        label: "Mary Wong",
+	        desc: "Thoracic",
+					locPractice: "PAMF",
+					locCity: "Palo Alo",
+					locState: "CA",
+					locPhone: "(650) 555-1234"
+	        //icon: "sizzlejs_32x32.png"
+	      }
+	    ];
+ 
+	    $( "#physician" ).autocomplete({
+	      minLength: 0,
+	      source: physicians,
+	      focus: function( event, ui ) {
+	        $( "#physician" ).val( ui.item.label );
+	        return false;
+	      },
+	      select: function( event, ui ) {
+	        $( "#physician" ).val( ui.item.label );
+					$( "#record-info" ).attr( "class", "form-group has-success" );
+	       	$( "#physician-id" ).val( ui.item.value );
+	        $( "#physician-description" ).val( ui.item.desc );
+					$( "#physician-practice" ).val( ui.item.locPractice );
+					$( "#physician-city" ).val( ui.item.locCity );
+					$( "#physician-state" ).val( ui.item.locState );
+					$( "#physician-phone" ).val( ui.item.locPhone );
+	        //$( "#physician-icon" ).attr( "src", "images/" + ui.item.icon );
+ 
+	        return false;
+	      }
+	    })
+	    .data( "ui-autocomplete" )._renderItem = function( ul, item ) {
+	      return $( "<li>" )
+	        .append( "<a>" + item.label + "<br><span class='small text-info'>" + item.desc + " " + item.locPractice + " " + item.locCity +"</span></a>" )
+	        .appendTo( ul );
+	    };
+	  });
+		
+			window.setTimeout(function() { $("#alert").alert('close'); }, 2000);
+	  </script>

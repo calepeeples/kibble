@@ -1,0 +1,158 @@
+<% content_for :title do %>Grand Rounds<% end %>
+<% content_for :description do %>Grand Rounds<% end %>
+	<div class="message-header color-orange">
+		<% if current_user.validemail == true %>
+			<div class="container">
+				<div class="callout">
+					<strong>Jamba Juice</strong> is excited to offer Grand Rounds benefits to your extended family. <%= link_to 'Add family memebers to my coverage', edit_user_path(current_user), :class => "btn btn-primary" %>
+				</div>
+			</div>
+		<% else %>
+			<div class="container">
+				<div class="callout">
+						<div class="row">
+							<div class="col-md-8 col-md-offset-1">
+								<h1>Welcome to Grand Rounds,	<%= @user.firstname %>.</h1>
+								<p>
+									We're here to help you and your extended family get the best care possible.
+								</p>
+								<p>
+									We've sent an email to <strong><%= @user.email %></strong> to help you get started. Please check your email and click <strong>Verify</strong> to let us know that you received our message.
+								</p>
+								<p>Thank you</p>
+		<p><a href="#"><i class="fa fa-envelope-o"></i> Resend my verification  email</a></p>
+							</div>
+						</div>
+					<span class="notch"></span>
+				</div><!-- /callout -->
+				<div class="media">
+					<p class="pull-left"><image src="http://gr-wordpress.s3.amazonaws.com/2013/10/GR_BoardStaff__0000_ShaundraClinicalStaff.jpg" width="120" class="img-circle media-object"></p>
+					<div class="media-body">
+						<strong>Dr. Shaundra Eichstadt</strong>
+						<p>Grand Rounds Staff Physician</p>
+					</div>
+				</div>
+				</div>
+		<% end %>
+
+	</div>
+	</div><!-- /welcome -->
+	
+<% if current_user.cases == true %>
+	<div class="container">
+	
+		<h2>Open Cases</h2>
+		<table class="table table-hover">
+		      <thead>
+		        <tr>
+		          <th>Case</th>
+		          <th>Date Started</th>
+							<th></th>
+		        </tr>
+		      </thead>
+		      <tbody>
+		        <tr>
+		          <td class="caselist visit"><h4>Toxic Apical Meningitis</h4></td>
+		          <td>Friday, March 28, 2014</td>
+		          <td><span class="label label-danger">Need more info</span></td>
+		        </tr>
+		        <tr>
+		          <td class="caselist opinion"><h4>Hereditary Lower Quadrant Cellulitis</h4></td>
+		          <td>Thursday, March 20, 2014</td>
+		          <td><span class="label label-warning">Expert Review</span></td>
+		        </tr>
+		        <tr>
+		          <td><h4>Idiopathic Axillary Dysrhythmias</h4></td>
+		          <td>Wednesday, March 19, 2014</td>
+		          <td><span class="label label-success">Your Opinion is Ready</span></td>
+		        </tr>
+		      </tbody>
+		    </table>
+				
+				<h2>Team Cases</h2>
+				<table class="table table-hover">
+				      <thead>
+				        <tr>
+				          <th>Case</th>
+				          <th>Date Started</th>
+									<th></th>
+				        </tr>
+				      </thead>
+				      <tbody>
+				        <tr>
+				          <td><h4>Restless Lower Quadrant Intolerance</h4><p class="text-info">Mark Halverford</p></td>
+				          <td>Friday, March 28, 2014</td>
+				          <td><span class="label label-danger">Need more info</span></td>
+				        </tr>
+				      </tbody>
+				    </table>
+	</div>
+	<% end %>
+	
+	<div class="container">
+		<h2>Your Grand Rounds Services</h2>
+	<div class="row">
+	  <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+	     <a href="#"><%= image_tag "icons/services/visits-circle-M.png", :class => "media-object" %></a>
+	      <div class="caption">
+	        <h3>In-Person Visits<small> for when you need to find a local doctor.</small></h3>
+	        <p><a href="#" class="btn btn-primary" role="button">Start an in-person Visit</a></p>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+									<%= link_to(image_tag("icons/services/opinions-circle-M.png"), { :controller => "cases",
+				:action => "new"}) %>
+	      <div class="caption">
+	        <h3>Remote Opinions <small> when you need a second opinion from a world leader.</small></h3>
+	        <p><a href="#" class="btn btn-primary" role="button">start a remote opinion</a></p>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+	      <a href="#"><%= image_tag "icon-stat.png"%></a>
+	      <div class="caption">
+	        <h3>Grand Rounds STAT! <small> when you're in the hospital and need help right away.</small></h3>
+	        <h3>call 1 (800) 929-0926</h3>
+					<a href="#"><i class="fa fa-users"></i> add Grand Rounds to your contacts</a>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	</div>
+	
+
+	
+	
+	<!-- Coupon Code Modal -->
+	<div class="modal fade" id="couponModal">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title">Grand Rounds Discount Code</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p>Grand Rounds Discount Codes are provided by employers to provide access to world renowned physicians and experts for little or no cost.</p>
+					<p>You can still use our services without a code, but may have to pay a larger out-of-pocket fee.</p>
+					<p>If you believe you are covered by an Employer but don't have a code, please call <strong>1-800-929-0926</strong>.</p>
+					<div class="form-group">
+						<label>Company or Discount Code (optional)</label>
+						<div class="row">
+							<div class="col-xs-10">
+								<input type="text" class="form-control" placeholder="Company Code ex. GRCOMPANY123" autofocus>
+							</div>
+						</div>
+					</div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Continue without Code</button>
+	        <button type="button" class="btn btn-primary" data-dismiss="modal">Save Code</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	

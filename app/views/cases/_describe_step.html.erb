@@ -1,0 +1,181 @@
+	<!-- Progress Bar -->
+	<div class="progress-bar-opinion">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="media">
+						<%= image_tag 'gr-opinion.png', :size => '68', :class => "media-object pull-left" %>
+							<div class="media-body">
+								<small>GRAND ROUNDS</small>
+								<h4>EXPERT OPINION</h4>
+							</div>
+						</div>
+				</div>
+				<div class="col-md-2 text-center step-on">
+					<span class="fa-stack fa-lg">
+					      <i class="fa fa-circle fa-stack-2x"></i>
+					      <i class="fa fa-inverse fa-stack-1x">1</i>
+			    </span>
+					<p>Start your Opinion</p>
+				</div>
+				<div class="col-md-2 text-center step-next">
+					<span class="fa-stack fa-lg">
+					      <i class="fa fa-circle fa-stack-2x"></i>
+					      <i class="fa fa-inverse fa-stack-1x">2</i>
+			    </span>
+					<p>Locate your Records</p>
+				</div>
+				<div class="col-md-2 text-center step-next">
+					<span class="fa-stack fa-lg">
+					      <i class="fa fa-circle fa-stack-2x"></i>
+					      <i class="fa fa-inverse fa-stack-1x">3</i>
+			    </span>
+					<p>Approve your Release</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Progress Bar -->
+	
+	<div class="container signup-container">
+		<div class="row">
+			<div class="col-md-3 hidden-sm hidden-xs sidebar">
+				<!-- <p><strong>Getting</strong> an expert opinion from our panel of elite physicians is simple and easy.</p><p>Getting started should only take a few minutes.</p> -->
+				<div class="panel panel-info">
+					<div class="panel-heading">What if I don’t know the name of my condition?</div>
+					<div class="panel-body">
+						<small>
+					  <p>Often times we can get the name of the condition from your medical records but it is very helpful for us to have the diagnosed condition as we begin. Don't worry about spelling it correctly, the condition field is written to suggest the right ansers based on just a few keystrokes.</p>
+						<p>If this is a new condition or you are unsure about your condition, a visit to an expert physician in your area may be a better solution.</p>
+						</small>
+						<button type="button" class="btn btn-info">I need a visit instead</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-9">
+								
+				<!-- payment info -->
+				<div class="item">
+					<p>Just a brief summary of your condition and symptoms are enough to get us started. In the next step, you'll also need to provide us with the names of your doctors, physicians and specialists so we can begin gathering your medical records.</p>
+					<hr>
+					
+					<form class="form-signup">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-xs-4">
+							    <label>I am creating this case for </label>
+									<select class="form-control" id="covered">
+									  <option>Myself</option>
+										<option>Other family member</option>
+									</select>
+								</div>
+							</div>
+							<div class="dependent well show1 form-group" style="display:none" id="row_dim">
+								<div class="form-group">
+								<label>Their Name</label>
+								<div class="row">
+								<div class="col-xs-6">
+								 <input type="text" class="form-control" placeholder="First name" required autofocus>
+								</div>
+								<div class="col-xs-6">
+									<input type="text" class="form-control" placeholder="Last name" required>
+								</div>
+								</div>
+								</div>
+								<div class="form-group">
+								<label class="control-label">Their Email</label>
+								<div class="row">
+									<div class="col-xs-8">
+										<input type="text" class="form-control" placeholder="Email address" required data-container="body" data-toggle="popover" data-title="Email tip:" data-placement="left" data-content="Make sure you type it correctly, it will be the primary way that Grand Rounds contacts you about your case.">		
+								</div>
+								</div>
+								</div>
+								<div class="form-group">
+									<label>Relationship to you</label>
+									<div class="row">
+										<div class="col-xs-4">
+											<select class="form-control">
+											  <option>Father</option>
+											  <option>Mother</option>
+												<option>Spouse/Partner</option>
+												<option>Daughter</option>
+												<option>Son</option>
+												<option>Sister</option>
+												<option>Brother</option>
+											</select>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12">
+										<div class="checkbox">
+									    <label>
+									      <input type="checkbox"> I am legally able to act on this persons behaf.
+									    </label>
+									  </div>
+										</div>
+										</div>
+								</div>
+							</div><!-- end  well-->
+						</div>
+						<hr>
+						<div class="form-group">
+							<label>Existing Medical Condition</label>
+							<input type="text" class="form-control" placeholder="Condition name" data-toggle="popover" data-placement="left" data-title="Condition tip:" data-content="Don't worry about correct spelling, our type-ahead system should help you locate the right condition.">
+							<p><a id="add-description">Want to add a description?</a></p>
+							<div class="well" id="condition-description" style="display:none">
+							<label>Additional Description</label>
+							<textarea id="condition-description" class="form-control" rows="3"></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<label>Specialist who diagnosed this condition</label>
+							<input type="text" class="form-control" placeholder="Specialist's name">
+						</div>
+						<div class="form-group">
+							<label>Date of diagnosis</label>
+							<div class="row">
+								<div class="col-xs-4">
+									<select class="form-control">
+									  <option>Month</option>
+									  <option>...</option>
+									</select>
+								</div>
+								<div class="col-xs-2">
+									<input type="text" class="form-control" placeholder="Year">
+								</div>
+							</div>
+						</div>
+						<p><%= f.submit "Save & Continue", :class => "btn btn-lg btn-primary btn-block" %></p>
+						<%= f.submit "Back", :name => "back_button" unless @case.first_step? %>
+						<p class="text-right"><small><strong>Next Step:</strong> Locate your Medical Records</small></p>
+					</form>
+				</div>
+				<!-- /payment info -->
+				
+					<!-- create account -->		
+				
+
+				<!-- /carousel -->
+			</div>
+
+		</div>
+	</div>
+	<script>
+	$(function() {
+	    $('#row_dim').hide(); 
+	    $('#covered').change(function(){
+	        if($('#covered').val() == 'Other family member') {
+	            $('#row_dim').show(250); 
+	        } else {
+	            $('#row_dim').hide(250); 
+	        } 
+	    });
+	});
+	
+	$( "#add-description" ).click(function() {
+	  $( "#condition-description" ).show(250);
+	});
+	
+	window.setTimeout(function() { $("#alert").alert('close'); }, 2000);
+	</script>

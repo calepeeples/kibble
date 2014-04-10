@@ -1,0 +1,138 @@
+	<!-- Progress Bar -->
+	<div class="progress-bar-opinion">
+		<div class="container">
+			<div class="row">
+				<%= image_tag "signup-progressbar03.png" %>
+			</div>
+		</div>
+	</div>
+	<!-- /Progress Bar -->
+	
+	<div class="container signup-container">
+		<div class="row">
+			<div class="col-md-3 hidden-sm hidden-xs sidebar">
+				<p><strong>Getting</strong> an expert opinion from our panel of elite physicians is simple and easy.</p><p>Getting started should only take a few minutes.</p>
+				<div class="panel panel-info">
+					<div class="panel-heading">What if I don’t know the name of my condition?</div>
+					<div class="panel-body">
+						<small>
+					  <p>Often times we can get the name of the condition from your medical records but it is very helpful for us to have the diagnosed condition as we begin. Don't worry about spelling it correctly, the condition field is written to suggest the right ansers based on just a few keystrokes.</p>
+						<p>If this is a new condition or you are unsure about your condition, a visit to an expert physician in your area may be a better solution.</p>
+						</small>
+						<button type="button" class="btn btn-info">I need a visit instead</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-9">
+								
+				<!-- payment info -->
+				<div class="item">
+					<p><strong>Just</strong> a brief summary of your condition and symptoms are enough to get us started. In the next step, you'll also need to provide us with the names of your doctors, physicians and specialists so we can begin gathering your medical records.</p>
+					<hr>
+					
+					<form class="form-signup">
+						<div class="form-group">
+							<div class="radio">
+							  <label>
+							    <input id="hide" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+							    I am creating this case for myself.
+							  </label>
+							</div>
+							<div class="radio">
+							  <label>
+							    <input id="show1" type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+							    I am creating this case for a family member or dependent.
+							  </label>
+							</div>
+							<div class="dependent well show1 form-group" style="display:none">
+								<div class="form-group">
+								<label>Their Name</label>
+								<div class="row">
+								<div class="col-xs-6">
+								 <input type="text" class="form-control" placeholder="First name" required autofocus>
+								</div>
+								<div class="col-xs-6">
+									<input type="text" class="form-control" placeholder="Last name" required>
+								</div>
+								</div>
+								</div>
+								<div class="form-group">
+								<label class="control-label">Their Email</label>
+								<div class="row">
+									<div class="col-xs-8">
+										<div class="checkbox">
+									    <label>
+									      <input type="checkbox"> This person doesn't have an email address
+									    </label>
+									  </div>
+										<input type="text" class="form-control" placeholder="Email address" required data-container="body" data-toggle="popover" data-title="Email tip:" data-placement="left" data-content="Make sure you type it correctly, it will be the primary way that Grand Rounds contacts you about your case.">		
+								</div>
+								</div>
+								</div>
+								<div class="form-group">
+									<label>Relationship to you</label>
+									<div class="row">
+										<div class="col-xs-4">
+											<select class="form-control">
+											  <option>Spouse</option>
+											  <option>...</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div><!-- end  well-->
+						</div>
+						<hr>
+						<div class="form-group">
+							<label>Existing Medical Condition</label>
+							<input type="text" class="form-control" placeholder="Condition name" data-toggle="popover" data-placement="left" data-title="Condition tip:" data-content="Don't worry about correct spelling, our type-ahead system should help you locate the right condition.">
+							<p><a href-"#">Want to add a description?</a></p>
+							<!-- <textarea class="form-control" rows="3"></textarea> -->
+						</div>
+						<div class="form-group">
+							<label>Doctor who diagnosed this condition</label>
+							<input type="text" class="form-control" placeholder="Doctor name">
+						</div>
+						<div class="form-group">
+							<label>Date of diagnosis</label>
+							<div class="row">
+								<div class="col-xs-4">
+									<select class="form-control">
+									  <option>Month</option>
+									  <option>...</option>
+									</select>
+								</div>
+								<div class="col-xs-2">
+									<input type="text" class="form-control" placeholder="Year">
+								</div>
+							</div>
+						</div>
+						<p><%= f.submit "Continue", :class => "btn btn-lg btn-primary btn-block" %></p>
+						<%= f.submit "Back", :name => "back_button" unless @case.first_step? %>
+						<p class="text-right"><small><strong>Next Step:</strong> Describe your Condition</small></p>
+					</form>
+				</div>
+				<!-- /payment info -->
+				
+					<!-- create account -->		
+				
+
+				<!-- /carousel -->
+			</div>
+
+		</div>
+	</div>
+	<script>
+	$(document).ready(function() {
+
+	    $("input[type=radio]").change(function()
+	    {
+	        var divId = $(this).attr("id");
+	        $("div.dependent").hide(250);
+	        $("." + divId).show(250);
+	        $("input[type=checkbox]").change();
+	    });
+
+	});
+	</script>

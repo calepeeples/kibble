@@ -2,19 +2,27 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Kibble" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Kibble" %>">
+    <title><%= content_for?(:title) ? yield(:title) : "kibble" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Myapp" %>">
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
+		<%= yield :script %>
+		<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	  <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+		
   </head>
   <body>
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
+     <%= render 'layouts/messages' %>
+		<header>
+			<%= render 'layouts/navbar' %>
+		</header>
     <main role="main">
-       <%= render 'layouts/messages' %>
        <%= yield %>
     </main>
+		<footer>
+			<%= render 'layouts/footer' %>
+		</footer>
   </body>
 </html>

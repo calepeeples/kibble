@@ -1,0 +1,124 @@
+<% content_for :title do %>Grand Rounds: Create Your Account<% end %>
+<% content_for :description do %>Grand Rounds: Create Your Account<% end %>
+	<!-- Progress Bar -->
+	<div class="progress-bar-opinion">
+		<div class="container">
+			<div class="row">
+				<%= image_tag "createaccount-processbar01.png" %>
+			</div>
+		</div>
+	</div>
+	<!-- /Progress Bar -->
+	<!-- From -->
+	<div class="container signup-container">
+		<div class="row">
+			<div class="col-md-3 hidden-sm hidden-xs sidebar">
+				<p><strong>Getting</strong> an expert opinion or visit from our panel of elite physicians is simple and easy.</p><p>Getting started should only take a few minutes.</p>
+			</div>
+
+			<div class="col-md-9">
+				
+					<!-- create account -->		
+				<div class="item active">
+				<p><strong>As</strong> we work on your case, we'll be capturing personal and health information. We want to make sure your information is kept private and secure. So the first step, is for you to create a secure account.</p> 
+				<hr>
+				<%= simple_form_for @user do |f| %>
+				 <%= f.error_notification %>
+				<div class="form-group">
+					<%= f.label :Name %>
+				<div class="row">
+				<div class="col-xs-6">
+					<%= f.input :firstname, label: false, :placeholder => 'First name', :class => "form-control", :autofocus => true %>
+				</div>
+				<div class="col-xs-6">
+					<%= f.input :lastname, label: false, :placeholder => 'Last name', :class => "form-control" %>
+				</div>
+				</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label">Email</label>
+					<div class="row">
+						<div class="col-xs-8">
+							<%= f.input :email, label: false, :placeholder => 'Your email address...', :class => "form-control", :input_html => {"data-container" => "body", "data-toggle" => "popover", "data-trigger" => "focus", "data-placement" => "left", "data-title" => "Email", "data-content" => "Make sure you type it correctly, it will be the primary way that Grand Rounds contacts you about your case."} %>						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<%= f.label "Create your password" %>
+					<div class="row">
+						<div class="col-xs-6">
+							<%= f.input :password, label: false, :placeholder => 'Password... not 1234, please', :class => "form-control", :input_html => {"data-container" => "body", "data-toggle" => "popover", "data-trigger" => "focus", "data-placement" => "left", "data-title" => "Picking a Password", "data-content" => "Use at least 8 characters. Don’t use something too obvious like your pet’s name or your birthday."} %>
+						</div>
+						<div class="col-xs-6">
+							<div class="progress">
+							<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
+							<span class="sr-only">Not very strong</span>
+							</div>
+							</div>
+
+						</div>
+					</div>
+					
+					<%= f.label "Confirm your password" %>
+					<div class="row">
+						<div class="col-xs-6">
+							<%= f.input :password_confirmation, label: false, :placeholder => 'Password... again', :class => "form-control", :input_html => {"data-container" => "body", "data-toggle" => "popover", "data-trigger" => "focus", "data-placement" => "left", "data-title" => "Confirm your Password", "data-content" => "Please make sure it matches the one you just typed."} %>
+						</div>
+						</div>
+						
+				</div>
+				
+				<div class="form-group">
+				<%= f.label "Phone Number" %>
+				<div class="row">
+				<div class="col-xs-6">
+				 <%= f.input :tel, label: false, :placeholder => 'Phone number', :class => "form-control", :input_html => {"data-container" => "body", "data-toggle" => "popover", "data-trigger" => "focus", "data-placement" => "left", "data-html" => "true", "data-title" => "Phone", "data-content" => "Your phone number gives us an additional way to contact you about your case as well as helping us to verify your identity. <p><strong>With your mobile number, we can also SMS you updates to your case.</strong></p>"} %>
+				</div>
+				<div class="col-xs-4">
+					<select class="form-control">
+					  <option>Mobile</option>
+					  <option>Home</option>
+						<option>Other</option>
+					</select>
+				</div>
+				</div>
+				</div>
+				<div class="form-group">
+					<label>Birthday</label>
+					<div class="row">
+						<div class="col-xs-8">
+							<%= f.date_select :birthday, :order => [:month, :day, :year], :label => false, :class => "form-control" %>
+					</div>
+				</div>
+				</div>
+				<div class="form-group">
+					<%= f.label "Last 4 digits of your Social Security Number" %>
+					<div class="row">
+						<div class="col-xs-2">
+							<%= f.input :ssn, label: false, :placeholder => 'SSN', :class => "form-control", :input_html => {"data-container" => "body", "data-toggle" => "popover", "data-trigger" => "focus", "data-placement" => "left", "data-html" => "true", "data-title" => "SSN", "data-content" => "<strong>We will never share this information and we encrypt it immediately.</strong> <p>We only collect it because we often need it to request medical records on your behalf."} %>
+							</div>
+						</div>
+				</div>
+				<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">I agree with the Grand Rounds <a href="#">Terms of Service</a>.
+				</label>
+				</div>
+				<p><%= f.button :submit, "Create Account", :class => "btn btn-lg btn-primary btn-block" %></p>
+				<div class="row">
+					<div class="col-md-6"><p><small><a href="#">I already have an account</a></small></p></div>
+					<div class="col-md-6"><p class="text-right"><small><strong>Next Step:</strong> Payment Info</small></p></div>
+				</div>
+				
+				<% end %>
+					<!-- /create account -->					
+					</div>
+
+				<!-- /carousel -->
+			</div>
+
+		</div>
+	</div>
+	<!-- Include the password plugin. Yay! -->
+	<script>
+	    $("[data-toggle=popover]").popover()
+	</script>

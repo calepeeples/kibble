@@ -1,0 +1,16 @@
+<% content_for :title do %>Grand Rounds<% end %>
+<% content_for :description do %>Grand Rounds<% end %>
+
+	<div class="container">
+		<div class="page-header">
+			<h1>Grand Rounds: "Kibble" User Testing</h1>
+		</div>
+		<p><%= link_to("Create your Account",{ :controller => "users",
+:action => "new"}) %></p>
+		<p><%= link_to("View Dashboard",{ :controller => "users",
+:action => "index"}) %></p>
+		<p><%= link_to("Get a Remote Opinion",{ :controller => "cases",
+:action => "new"}) %></p>
+		<p><strong>Adil's test Monday, March 17, 2014</strong> <%= link_to("Start using Grand Rounds",{ :controller => "users",
+:action => "new"}) %></p>
+	</div>

@@ -1,0 +1,91 @@
+<% content_for :title do %>Grand Rounds: Case Started<% end %>
+<% content_for :description do %>Grand Rounds: Case Started<% end %>
+<% content_for :script do %><%end %>
+
+	<!-- Progress Bar -->
+	<div class="progress-bar-opinion">
+		<div class="container">
+			<div class="row">
+				<!-- <%= image_tag "signup-progressbar02.png" %> -->
+			</div>
+		</div>
+	</div>
+	<!-- welcome -->
+	<div class="message-header color-orange">
+		<div class="container">
+		<div class="callout">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-1">
+						<h1>We just started on your case,	<%= @name.firstname %>.</h1>
+						<h3>Our Care Team is going to start collecting your medical records right away.</h3>
+						<p>Fanny pack banh mi flexitarian whatever lo-fi. Ut actually flexitarian vegan. Single-origin coffee XOXO roof party, flannel viral mustache plaid. Before they sold out incididunt.</p>
+<p><button class="btn btn-lg btn-primary" href="#carousel-example-generic" data-slide="next"><i class="fa fa-file-text-o"></i>View Case</button></p>
+					</div>
+				</div>
+			<span class="notch"></span>
+		</div><!-- /callout -->
+		<div class="media">
+			<p class="pull-left"><image src="http://gr-wordpress.s3.amazonaws.com/2013/10/GR_BoardStaff__0000_ShaundraClinicalStaff.jpg" width="120" class="img-circle media-object"></p>
+			<div class="media-body">
+				<strong>Dr. Shaundra Eichstadt</strong>
+				<p>Grand Rounds Staff Physician</p>
+			</div>
+			</div>
+	</div>
+	</div><!-- /welcome -->
+	<div class="container">
+		<h2>Your Cases</h2>
+		<table class="table table-hover">
+		      <thead>
+		        <tr>
+		          <th>Case Name</th>
+		          <th>Date Started</th>
+		          <th>Status</th>
+							<th></th>
+		        </tr>
+		      </thead>
+		      <tbody>
+		        <tr>
+		          <td><strong>My first Case</strong></td>
+		          <td>Thursday, March 20, 2014</td>
+		          <td>Collecting Records</td>
+		          <td><span class="label label-danger">Need more info from you</span></td>
+		        </tr>
+		      </tbody>
+		    </table>
+		<h2>Your Grand Rounds Services</h2>
+	<div class="row">
+	  <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+	     <a href="#"><%= image_tag "icon-visit.png", :class => "media-object" %></a>
+	      <div class="caption">
+	        <h3>In-Person Visits <small>with local physicians who are specialists in your condition.</small></h3>
+	        <p><a href="#" class="btn btn-primary" role="button">Start an in-person Visit</a></p>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+									<%= link_to(image_tag("icon-opinion.png"), { :controller => "cases",
+				:action => "new"}) %>
+	      <div class="caption">
+	        <h3>Remote Opinions <small>from experts who are in the top <strong>1%</strong> in the world.</small></h3>
+	        <p><a href="#" class="btn btn-primary" role="button">start a remote opinion</a></p>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+	      <a href="#"><%= image_tag "icon-stat.png"%></a>
+	      <div class="caption">
+	        <h3>Grand Rounds STAT! <small>fast 24x7 health support for you and your family.</small></h3>
+	        <p><a href="#" class="btn btn-primary" role="button">Start a STAT case</a></p>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	</div>
+	
+	<script>
+	window.setTimeout(function() { $("#alert").alert('close'); }, 2000);
+	</script

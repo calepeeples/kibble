@@ -1,0 +1,15 @@
+
+---
+users:
+  columns:
+  - id
+  - email
+  - firstname
+  - lastname
+  - password
+  - tel
+  - birthday
+  - ssn
+  - created_at
+  - updated_at
+  records: 

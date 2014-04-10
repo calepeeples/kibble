@@ -1,0 +1,53 @@
+@import 'grcolors.scss';
+
+.modal {
+	
+	.btn {
+		
+	}
+	
+	.btn-primary {
+		background-color: $grblue;
+		border: 1px solid $grblue;
+	}
+	
+
+	.btn-primary:hover,
+	.btn-primary:focus,
+	.btn-primary:active,
+	.btn-primary.active,
+	.open .dropdown-toggle.btn-primary {
+	  color: #ffffff;
+	  background-color: #417CB7;
+	}
+	
+	.btn-default {
+		color: $grblue;
+		border: 1px solid #63AEEB;
+	}
+
+	a {
+		color: $grblue;
+	}
+
+}
+
+.modal-header {
+  min-height: 16.428571429px;
+  padding: 15px;
+  border-bottom: 0px solid #e5e5e5;
+	background-color: $grblue;
+	color: #ffffff;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #999999;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0px;
+  outline: none;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  background-clip: padding-box;
+}

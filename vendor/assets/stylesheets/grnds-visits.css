@@ -1,0 +1,30 @@
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #FBB942;
+}
+
+.toolbar {
+	margin-top: 60px;
+	color: #ffffff;
+}
+
+.container-opinion {
+	background-color: #ffffff;
+}
+
+.img-thumbnail {
+	margin-right: 20px;
+}
+
+.img-circle {
+	border: 2px	solid #ffffff;
+}
+
+li {
+	padding-bottom: 1em;
+}
+
+.super-big {
+	font-size: 200px;
+}
