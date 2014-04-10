@@ -1026,3 +1026,6 @@ text-align: center;
 .caselist.opinion {
 	background: url('./icons/services/opinions-circle-S.png') center left no-repeat;
 }
+.caselist.stat {
+	background: url('./icons/services/STAT-circle-S.png') center left no-repeat;
+}
