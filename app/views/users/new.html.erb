@@ -1,25 +1,14 @@
 <% content_for :title do %>Grand Rounds: Create Your Account<% end %>
 <% content_for :description do %>Grand Rounds: Create Your Account<% end %>
-	<!-- Progress Bar -->
-	<div class="progress-bar-opinion">
-		<div class="container">
-			<div class="row">
-				<%= image_tag "createaccount-processbar01.png" %>
-			</div>
-		</div>
-	</div>
-	<!-- /Progress Bar -->
+
 	<!-- From -->
 	<div class="container signup-container">
+			
 		<div class="row">
-			<div class="col-md-3 hidden-sm hidden-xs sidebar">
-				<p><strong>Getting</strong> an expert opinion or visit from our panel of elite physicians is simple and easy.</p><p>Getting started should only take a few minutes.</p>
-			</div>
-
-			<div class="col-md-9">
-				
+			<div class="col-md-9 col-md-offset-2" >
 					<!-- create account -->		
 				<div class="item active">
+					<h1>Create your Grand Rounds account</h1>
 				<p><strong>As</strong> we work on your case, we'll be capturing personal and health information. We want to make sure your information is kept private and secure. So the first step, is for you to create a secure account.</p> 
 				<hr>
 				<%= simple_form_for @user do |f| %>

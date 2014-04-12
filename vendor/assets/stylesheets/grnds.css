@@ -1029,3 +1029,6 @@ text-align: center;
 .caselist.stat {
 	background: url('./icons/services/STAT-circle-S.png') center left no-repeat;
 }
+.caselist.archived{
+	background-color:#F9F9F9;
+}
