@@ -1,16 +1,40 @@
 <% content_for :title do %>Grand Rounds: Create Your Account<% end %>
 <% content_for :description do %>Grand Rounds: Create Your Account<% end %>
 
-	<!-- From -->
+	<!-- Form -->
+	
 	<div class="container signup-container">
-			
+			<h1 class="text-center">Create your Grand Rounds account</h1>
 		<div class="row">
-			<div class="col-md-9 col-md-offset-2" >
+			<div class="col-md-5 hidden-sm hidden-xs">
+			<!-- <p>As we work on your case, we'll be capturing personal and health information. We want to make sure your information is kept private and secure. So the first step, is for you to create a secure account.</p> 
+			<hr> -->
+				
+
+						<div class="callout outline">
+								<div class="row">
+									<div class="col-md-12">
+										<p><q>Grand Rounds set me in the right direction for my care. Otherwise I wouldn’t have been as confident about whom I was working with.</q></p>
+										<strong>Don</strong>
+										<p>Peripheral Artery Disease</p>
+									</div>
+								</div>
+							<span class="notch outline"></span>
+						</div><!-- /callout -->
+						<div class="media">
+							<p class="pull-left">
+								<%= image_tag "don2.png", :width => "120", :class => "img-circle media-object" %></p>
+							<div class="media-body">
+
+							</div>
+						</div>
+
+				
+			</div> <!-- /testimonial -->
+			<div class="col-md-6 col-md-offset-1" >
 					<!-- create account -->		
 				<div class="item active">
-					<h1>Create your Grand Rounds account</h1>
-				<p><strong>As</strong> we work on your case, we'll be capturing personal and health information. We want to make sure your information is kept private and secure. So the first step, is for you to create a secure account.</p> 
-				<hr>
+
 				<%= simple_form_for @user do |f| %>
 				 <%= f.error_notification %>
 				<div class="form-group">
@@ -26,47 +50,46 @@
 				</div>
 				<div class="form-group">
 					<label class="control-label">Email</label>
+					
 					<div class="row">
-						<div class="col-xs-8">
-							<%= f.input :email, label: false, :placeholder => 'Your email address...', :class => "form-control", :input_html => {"data-container" => "body", "data-toggle" => "popover", "data-trigger" => "focus", "data-placement" => "left", "data-title" => "Email", "data-content" => "Make sure you type it correctly, it will be the primary way that Grand Rounds contacts you about your case."} %>						</div>
+						<div class="col-xs-12">
+							<div class="input-group margin-bottom-sm">
+							  <%= f.input :email, label: false, :placeholder => 'Your email address...', :class => "form-control", :input_html => {"data-container" => "body", "data-toggle" => "popover", "data-trigger" => "focus", "data-placement" => "left", "data-title" => "Email", "data-content" => "Make sure you type it correctly, it will be the primary way that Grand Rounds contacts you about your case."} %>
+							</div>
+							<!-- <%= f.input :email, label: false, :placeholder => 'Your email address...', :class => "form-control", :input_html => {"data-container" => "body", "data-toggle" => "popover", "data-trigger" => "focus", "data-placement" => "left", "data-title" => "Email", "data-content" => "Make sure you type it correctly, it will be the primary way that Grand Rounds contacts you about your case."} %>						 --></div>
 					</div>
 				</div>
 				<div class="form-group">
 					<%= f.label "Create your password" %>
 					<div class="row">
-						<div class="col-xs-6">
-							<%= f.input :password, label: false, :placeholder => 'Password... not 1234, please', :class => "form-control", :input_html => {"data-container" => "body", "data-toggle" => "popover", "data-trigger" => "focus", "data-placement" => "left", "data-title" => "Picking a Password", "data-content" => "Use at least 8 characters. Don’t use something too obvious like your pet’s name or your birthday."} %>
-						</div>
-						<div class="col-xs-6">
-							<div class="progress">
-							<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
-							<span class="sr-only">Not very strong</span>
+						<div class="col-xs-12">
+							<div class="input-group">
+							  <%= f.input :password, label: false, :placeholder => 'Password... not 1234, please', :class => "form-control", :input_html => {"data-container" => "body", "data-toggle" => "popover", "data-trigger" => "focus", "data-placement" => "left", "data-title" => "Picking a Password", "data-content" => "Use at least 8 characters. Don’t use something too obvious like your pet’s name or your birthday."} %>
+							  <span class="input-group-addon"><i class="fa fa-eye"></i></span>
 							</div>
-							</div>
-
+							<!-- <%= f.input :password, label: false, :placeholder => 'Password... not 1234, please', :class => "form-control", :input_html => {"data-container" => "body", "data-toggle" => "popover", "data-trigger" => "focus", "data-placement" => "left", "data-title" => "Picking a Password", "data-content" => "Use at least 8 characters. Don’t use something too obvious like your pet’s name or your birthday."} %> -->
 						</div>
 					</div>
 					
-					<%= f.label "Confirm your password" %>
+					<!-- <%= f.label "Confirm your password" %>
 					<div class="row">
 						<div class="col-xs-6">
 							<%= f.input :password_confirmation, label: false, :placeholder => 'Password... again', :class => "form-control", :input_html => {"data-container" => "body", "data-toggle" => "popover", "data-trigger" => "focus", "data-placement" => "left", "data-title" => "Confirm your Password", "data-content" => "Please make sure it matches the one you just typed."} %>
 						</div>
-						</div>
+						</div> -->
 						
 				</div>
 				
 				<div class="form-group">
 				<%= f.label "Phone Number" %>
 				<div class="row">
-				<div class="col-xs-6">
+				<div class="col-xs-8">
 				 <%= f.input :tel, label: false, :placeholder => 'Phone number', :class => "form-control", :input_html => {"data-container" => "body", "data-toggle" => "popover", "data-trigger" => "focus", "data-placement" => "left", "data-html" => "true", "data-title" => "Phone", "data-content" => "Your phone number gives us an additional way to contact you about your case as well as helping us to verify your identity. <p><strong>With your mobile number, we can also SMS you updates to your case.</strong></p>"} %>
 				</div>
 				<div class="col-xs-4">
 					<select class="form-control">
 					  <option>Mobile</option>
 					  <option>Home</option>
-						<option>Other</option>
 					</select>
 				</div>
 				</div>

@@ -61,10 +61,6 @@ input {
 	padding: 1em;
 }
 
-.signup-container {
-	padding: 2em;
-}
-
 .sidebar {
 	padding-right: 2em;
 }
@@ -467,6 +463,13 @@ input {
 
 .callout hr {
 	
+}
+
+.callout.outline {
+	color: #5D5D60;
+	border: 1px solid #eee;
+	line-height: 2em;
+	padding: 2.5em;
 }
 
 /* Well */
@@ -1031,4 +1034,33 @@ text-align: center;
 }
 .caselist.archived{
 	background-color:#F9F9F9;
+}
+
+/* Forms */
+.input-group-addon {
+	color: #5D5D60;
+	background-color: #DCF0EF;
+	border-radius: 0px;
+}
+
+/* Timer */
+.timer {
+	height: 128px;
+	width: 128px;
+	background: url('./Timer-base.png') center left no-repeat;
+}
+
+.timer-hand {
+	height: 128px;
+	width: 128px;
+	background: url('./Timer-hand.png') center left no-repeat;
+}
+
+.timer-hand {
+    -webkit-animation: rotation 2s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+    from {-webkit-transform: rotate(0deg);}
+    to   {-webkit-transform: rotate(359deg);}
 }

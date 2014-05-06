@@ -26,3 +26,12 @@ h6,
 	margin-bottom: .9em;
   color: inherit;
 }
+
+q:before,
+blockquote:before {
+    content: open-quote;
+}
+q:after,
+blockquote:after {
+    content: close-quote;
+}
