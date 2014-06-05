@@ -1,7 +1,9 @@
 Kibble::Application.routes.draw do
   
+  get 'sign/index'
   root to: 'home#index'
   
+  resources :sign
   resources :users
   resources :cases, only: [:new, :create, :index, :show]
   resources :sessions, only: [:new, :create, :destroy]

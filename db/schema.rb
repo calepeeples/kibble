@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140401044906) do
+ActiveRecord::Schema.define(version: 20140605184830) do
 
   create_table "cases", force: true do |t|
     t.string "condition"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20140401044906) do
     t.string   "firstname"
     t.string   "lastname"
     t.string   "tel"
-    t.date     "birthday"
+    t.string   "birthday"
     t.string   "ssn"
     t.datetime "created_at"
     t.datetime "updated_at"

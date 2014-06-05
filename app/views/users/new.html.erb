@@ -6,10 +6,7 @@
 	<div class="container signup-container">
 			<h1 class="text-center">Create your Grand Rounds account</h1>
 		<div class="row">
-			<div class="col-md-5 hidden-sm hidden-xs">
-			<!-- <p>As we work on your case, we'll be capturing personal and health information. We want to make sure your information is kept private and secure. So the first step, is for you to create a secure account.</p> 
-			<hr> -->
-				
+			<div class="col-md-5 hidden-sm hidden-xs hidden">
 
 						<div class="callout outline">
 								<div class="row">
@@ -31,7 +28,7 @@
 
 				
 			</div> <!-- /testimonial -->
-			<div class="col-md-6 col-md-offset-1" >
+			<div class="col-md-6 col-md-offset-2" >
 					<!-- create account -->		
 				<div class="item active">
 
@@ -63,20 +60,20 @@
 					<%= f.label "Create your password" %>
 					<div class="row">
 						<div class="col-xs-12">
-							<div class="input-group">
+							<div class="margin-bottom-sm">
 							  <%= f.input :password, label: false, :placeholder => 'Password... not 1234, please', :class => "form-control", :input_html => {"data-container" => "body", "data-toggle" => "popover", "data-trigger" => "focus", "data-placement" => "left", "data-title" => "Picking a Password", "data-content" => "Use at least 8 characters. Don’t use something too obvious like your pet’s name or your birthday."} %>
-							  <span class="input-group-addon"><i class="fa fa-eye"></i></span>
+							  <!-- <span class="input-group-addon"><i class="fa fa-eye"></i></span> -->
 							</div>
-							<!-- <%= f.input :password, label: false, :placeholder => 'Password... not 1234, please', :class => "form-control", :input_html => {"data-container" => "body", "data-toggle" => "popover", "data-trigger" => "focus", "data-placement" => "left", "data-title" => "Picking a Password", "data-content" => "Use at least 8 characters. Don’t use something too obvious like your pet’s name or your birthday."} %> -->
 						</div>
 					</div>
-					
-					<!-- <%= f.label "Confirm your password" %>
+				</div>
+				<div class="form-group">
+					<%= f.label "Confirm your password" %>
 					<div class="row">
-						<div class="col-xs-6">
+						<div class="col-xs-12 margin-bottom-sm">
 							<%= f.input :password_confirmation, label: false, :placeholder => 'Password... again', :class => "form-control", :input_html => {"data-container" => "body", "data-toggle" => "popover", "data-trigger" => "focus", "data-placement" => "left", "data-title" => "Confirm your Password", "data-content" => "Please make sure it matches the one you just typed."} %>
 						</div>
-						</div> -->
+						</div>
 						
 				</div>
 				
@@ -93,12 +90,18 @@
 					</select>
 				</div>
 				</div>
+				<div class="checkbox">
+				<label>
+				<input type="checkbox" checked value="">Send me super helpful texts and stuff.
+				</label>
+				</div>
 				</div>
 				<div class="form-group">
 					<label>Birthday</label>
 					<div class="row">
 						<div class="col-xs-8">
-							<%= f.date_select :birthday, :order => [:month, :day, :year], :label => false, :class => "form-control" %>
+							<%= f.input :birthday, :placeholder => 'MM / DD / YYYY', :label => false, :class => "form-control", :input_html => {"data-container" => "body", "data-toggle" => "popover", "data-trigger" => "focus", "data-placement" => "left", "data-html" => "true", "data-title" => "Birthday", "data-content" => "Knowing your birthday will help us tailor your Grand Rounds experience."} %>
+							<!-- <%= f.date_select :birthday, :order => [:month, :day, :year], :label => false, :class => "form-control" %> -->
 					</div>
 				</div>
 				</div>
